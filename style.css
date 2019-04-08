@@ -208,8 +208,9 @@ src: local('Moderat Regular'), url('./assets/fonts/Moderat-Regular.ttf') format(
   font-size: .80rem;
   text-transform: uppercase;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
-  align-self: center;
-  display: flex;
+  /* align-self: center;
+  justify-content: center;
+  display: flex; */
 }
 
 .card--product .card-text {
