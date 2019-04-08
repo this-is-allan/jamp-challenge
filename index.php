@@ -1,4 +1,9 @@
 <?php
+
+// First, include Requests
+include('vendor/rmccue/requests/library/Requests.php');
+Requests::register_autoloader();
+
 if (isset($_GET['page'])) {
 $requested_page = $_GET['page'];
 }
