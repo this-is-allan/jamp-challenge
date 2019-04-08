@@ -62,3 +62,9 @@ typings/
 
 # .DS_Store
 .DS_Store
+
+# Vendor
+vendor
+
+# Composer
+composer.lock
