@@ -45,71 +45,80 @@
       </div>
     </nav>
 
-    <div class="generics-wrapper py-3">
-      <h5 class="p-3 m-0">Genérico do Tylenol</h5>
+    <?php if($resultsLength > 0): ?>
+      <div class="generics-wrapper py-3">
+        <h5 class="p-3 m-0">Genérico do Tylenol</h5>
 
-      <!-- Swiper -->
-      <div class="swiper-container pb-md-5">
-        <div class="swiper-wrapper my-1">
-          <?php foreach ($generics as $generic): ?>
-            <div class="swiper-slide generic-card">
-              <div class="generic-card__cover">
-                <img
-                  src="<?= $generic['productImg'] ?>"
-                  alt=""
-                />
-              </div>
+        <!-- Swiper -->
+        <div class="swiper-container pb-md-5">
+          <div class="swiper-wrapper my-1">
+            <?php foreach ($generics as $generic): ?>
+              <div class="swiper-slide generic-card">
+                <div class="generic-card__cover">
+                  <img
+                    src="<?= $generic['productImg'] ?>"
+                    alt=""
+                  />
+                </div>
 
-              <div class="generic-card__title">
-                <span><?= $generic['productName'] ?></span>
+                <div class="generic-card__title">
+                  <span><?= $generic['productName'] ?></span>
+                </div>
               </div>
-            </div>
-          <?php endforeach ?>
+            <?php endforeach ?>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
       </div>
-    </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="results-wrapper my-4">
-            <h3 class="results-wrapper__title">
-              Encontramos <?= $resultsLength ?> produtos para a busca:
-              <span class="text-highlight"><?= $query ?></span>
-            </h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="results-wrapper my-4">
+              <h3 class="results-wrapper__title">
+                Encontramos <?= $resultsLength ?> produtos para a busca:
+                <span class="text-highlight"><?= $query ?></span>
+              </h3>
 
-            <div class="results-wrapper__cards">
-              <div class="row no-gutters">
-                <?php foreach ($search_results as $product): ?>
-                  <div class="col-6 col-md-3 my-2">
-                    <div class="card card--product mx-1">
-                      <img
-                        class="card-img-top"
-                        src="<?= $product['productImg'] ?>"
-                        alt="Card image cap"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title"><?= $product['productName'] ?></h5>
-                        <p class="card-text">
-                          A partir de
-                          <strong>R$ <?= $product['productPrice'] ?></strong>
-                        </p>
-                        <a href="#" class="btn btn-primary btn-block btn-lg"
-                          >Comparar preços</a
-                        >
+              <div class="results-wrapper__cards">
+                <div class="row no-gutters">
+                  <?php foreach ($search_results as $product): ?>
+                    <div class="col-6 col-md-3 my-2">
+                      <div class="card card--product mx-1">
+                        <img
+                          class="card-img-top"
+                          src="<?= $product['productImg'] ?>"
+                          alt="Card image cap"
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title"><?= $product['productName'] ?></h5>
+                          <p class="card-text">
+                            A partir de
+                            <strong>R$ <?= $product['productPrice'] ?></strong>
+                          </p>
+                          <a href="#" class="btn btn-primary btn-block btn-lg"
+                            >Comparar preços</a
+                          >
+                        </div>
                       </div>
                     </div>
-                  </div>
-                <?php endforeach; ?>
+                  <?php endforeach; ?>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
+    <?php else: ?>
+      <div class="col-md-12">
+        <div class="d-flex justify-content-center align-self-center">
+          <div class="alert alert-secondary" role="alert">
+            Nenhum produto foi encontrado
+          </div>
+        </div>
+      </div>
+    <?php endif ?>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
