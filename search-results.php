@@ -19,8 +19,18 @@
   </head>
   <body>
     <?php
-    // echo $_GET['query'];
-  ?>
+      $query = strtolower($_GET['query']);
+      $headers = array('Accept' => 'application/json');
+
+      $response = Requests::get('https://dev.jampapp.com/api/get_products.php?terms=' . $query, $headers);
+      $products = json_decode($response->body, true);
+
+      $generics = $products['generics'];
+      $search_results = $products['search_results'];
+      $resultsLength = count($search_results);
+    ?>
+</table>
+
     <nav class="navbar navbar-light bg-white">
       <div class="container">
         <a class="navbar-brand" href="/">
@@ -41,114 +51,20 @@
       <!-- Swiper -->
       <div class="swiper-container pb-md-5">
         <div class="swiper-wrapper my-1">
-          <div class="swiper-slide generic-card">
-            <div class="generic-card__cover">
-              <img
-                src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                alt=""
-              />
-            </div>
+          <?php foreach ($generics as $generic): ?>
+            <div class="swiper-slide generic-card">
+              <div class="generic-card__cover">
+                <img
+                  src="<?= $generic['productImg'] ?>"
+                  alt=""
+                />
+              </div>
 
-            <div class="generic-card__title">
-              <span>Paracetamol 750MG 20 comprimidos</span>
+              <div class="generic-card__title">
+                <span><?= $generic['productName'] ?></span>
+              </div>
             </div>
-          </div>
-          <div class="swiper-slide generic-card">
-            <div class="generic-card__cover">
-              <img
-                src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                alt=""
-              />
-            </div>
-
-            <div class="generic-card__title">
-              <span>Paracetamol 750MG 20 comprimidos</span>
-            </div>
-          </div>
-          <div class="swiper-slide generic-card">
-            <div class="generic-card__cover">
-              <img
-                src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                alt=""
-              />
-            </div>
-
-            <div class="generic-card__title">
-              <span>Paracetamol 750MG 20 comprimidos</span>
-            </div>
-          </div>
-          <div class="swiper-slide generic-card">
-            <div class="generic-card__cover">
-              <img
-                src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                alt=""
-              />
-            </div>
-
-            <div class="generic-card__title">
-              <span>Paracetamol 750MG 20 comprimidos</span>
-            </div>
-          </div>
-          <div class="swiper-slide generic-card">
-            <div class="generic-card__cover">
-              <img
-                src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                alt=""
-              />
-            </div>
-
-            <div class="generic-card__title">
-              <span>Paracetamol 750MG 20 comprimidos</span>
-            </div>
-          </div>
-          <div class="swiper-slide generic-card">
-            <div class="generic-card__cover">
-              <img
-                src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                alt=""
-              />
-            </div>
-
-            <div class="generic-card__title">
-              <span>Paracetamol 750MG 20 comprimidos</span>
-            </div>
-          </div>
-          <div class="swiper-slide generic-card">
-            <div class="generic-card__cover">
-              <img
-                src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                alt=""
-              />
-            </div>
-
-            <div class="generic-card__title">
-              <span>Paracetamol 750MG 20 comprimidos</span>
-            </div>
-          </div>
-          <div class="swiper-slide generic-card">
-            <div class="generic-card__cover">
-              <img
-                src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                alt=""
-              />
-            </div>
-
-            <div class="generic-card__title">
-              <span>Paracetamol 750MG 20 comprimidos</span>
-            </div>
-          </div>
-          <div class="swiper-slide generic-card">
-            <div class="generic-card__cover">
-              <img
-                src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                alt=""
-              />
-            </div>
-
-            <div class="generic-card__title">
-              <span>Paracetamol 750MG 20 comprimidos</span>
-            </div>
-          </div>
+          <?php endforeach ?>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -160,91 +76,33 @@
         <div class="col-md-12">
           <div class="results-wrapper my-4">
             <h3 class="results-wrapper__title">
-              Encontramos 8 produtos para a busca:
-              <span class="text-highlight">Tylenol</span>
+              Encontramos <?= $resultsLength ?> produtos para a busca:
+              <span class="text-highlight"><?= $query ?></span>
             </h3>
 
             <div class="results-wrapper__cards">
               <div class="row no-gutters">
-                <div class="col-6 col-md-3 my-2">
-                  <div class="card card--product mx-1">
-                    <img
-                      class="card-img-top"
-                      src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                      alt="Card image cap"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Tylenol 750 Mg 20 comprimidos</h5>
-                      <p class="card-text">
-                        A partir de
-                        <strong>R$ 15,87</strong>
-                      </p>
-                      <a href="#" class="btn btn-primary btn-block btn-lg"
-                        >Comparar preços</a
-                      >
+                <?php foreach ($search_results as $product): ?>
+                  <div class="col-6 col-md-3 my-2">
+                    <div class="card card--product mx-1">
+                      <img
+                        class="card-img-top"
+                        src="<?= $product['productImg'] ?>"
+                        alt="Card image cap"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title"><?= $product['productName'] ?></h5>
+                        <p class="card-text">
+                          A partir de
+                          <strong>R$ <?= $product['productPrice'] ?></strong>
+                        </p>
+                        <a href="#" class="btn btn-primary btn-block btn-lg"
+                          >Comparar preços</a
+                        >
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-6 col-md-3 my-2">
-                  <div class="card card--product mx-1">
-                    <img
-                      class="card-img-top"
-                      src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                      alt="Card image cap"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Tylenol 750 Mg 20 comprimidos</h5>
-                      <p class="card-text">
-                        A partir de
-                        <strong>R$ 15,87</strong>
-                      </p>
-                      <a href="#" class="btn btn-primary btn-block btn-lg"
-                        >Comparar preços</a
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-3 my-2">
-                  <div class="card card--product mx-1">
-                    <img
-                      class="card-img-top"
-                      src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                      alt="Card image cap"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Tylenol 750 Mg 20 comprimidos</h5>
-                      <p class="card-text">
-                        A partir de
-                        <strong>R$ 15,87</strong>
-                      </p>
-                      <a href="#" class="btn btn-primary btn-block btn-lg"
-                        >Comparar preços</a
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-3 my-2">
-                  <div class="card card--product mx-1">
-                    <img
-                      class="card-img-top"
-                      src="https://static.ultrafarma.com.br/media/imagens_produtos/800px/00/700/90/9/00799448.jpg"
-                      alt="Card image cap"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Tylenol 750 Mg 20 comprimidos</h5>
-                      <p class="card-text">
-                        A partir de
-                        <strong>R$ 15,87</strong>
-                      </p>
-                      <a href="#" class="btn btn-primary btn-block btn-lg"
-                        >Comparar preços</a
-                      >
-                    </div>
-                  </div>
-                </div>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
@@ -268,6 +126,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
+    
     <script>
       setTimeout(function() {
         // document.location.reload()
