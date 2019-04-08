@@ -29,7 +29,6 @@
       $search_results = $products['search_results'];
       $resultsLength = count($search_results);
     ?>
-</table>
 
     <nav class="navbar navbar-light bg-white">
       <div class="container">
