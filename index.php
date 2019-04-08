@@ -4,18 +4,24 @@
 include('vendor/rmccue/requests/library/Requests.php');
 Requests::register_autoloader();
 
-if (isset($_GET['page'])) {
-$requested_page = $_GET['page'];
+// if ($_SERVER['REQUEST_URI'] == '/help') {
+//     include 'help.php';
+// } elseif ($_SERVER['REQUEST_URI'] == '/calendar') {
+//     include 'calendar.php';
+// } else {
+//     include 'notfound.php';
+// }
+
+
+if (isset($_SERVER['REDIRECT_URL'])) {
+$requested_page = $_SERVER['REDIRECT_URL'];
 }
 else {
 $requested_page = 'home';
 }
 
-// var_dump($requested_page);
-
-// a better way would be to put this into an array, but I think a switch is easier to read for this example
 switch($requested_page) {
-   case "search":
+   case "/search":
       include(__DIR__."/search-results.php");
       break;
    case "home":

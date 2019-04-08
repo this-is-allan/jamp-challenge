@@ -28,15 +28,17 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 offset-md-3 px-xs-5 px-0 px-md-5">
-          <div class="input-group mb-3">
-            <img src="./assets/icons/search_btn.png" alt="">
-            <input type="text" class="form-control" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" placeholder="Buscar pelo nome do produto">
-            <div class="input-group-append">
-              <button class="btn" type="button" id="button-addon2">
-                Buscar
-              </button>
+          <form action="/search">
+            <div class="input-group mb-3">
+              <img src="./assets/icons/search_btn.png" alt="">
+              <input name="query" type="text" class="form-control" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" placeholder="Buscar pelo nome do produto">
+              <div class="input-group-append">
+                <button class="btn" type="submit" id="button-addon2">
+                  Buscar
+                </button>
+              </div>
             </div>
-          </div>
+          </form>
           
           <div class="jumbotron__quote">
             <div class="jumbotron__text">

@@ -31,15 +31,19 @@
     ?>
 
     <nav class="navbar navbar-light bg-white">
-      <div class="container">
-        <a class="navbar-brand" href="/">
-          <img src="./assets/imgs/logo_jamp.png" alt="" />
+      <div class="d-flex w-100">
+        <a href="/">
+          <img src="./assets/icons/back_btn.png" height="50" width="50">
         </a>
 
-        <div class="right-side">
-          <a class="btn-img">
-            <img src="./assets/icons/profile_img.png" alt="" />
-          </a>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <img src="./assets/icons/search_btn.png">
+          </div>
+          <input type="text" class="form-control p-" value="<?= $query ?>">
+          <div class="input-group-append">
+            <img src="./assets/icons/clear_btn">
+          </div>
         </div>
       </div>
     </nav>

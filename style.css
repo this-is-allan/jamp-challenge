@@ -51,18 +51,20 @@ src: local('Moderat Regular'), url('./assets/fonts/Moderat-Regular.ttf') format(
   box-shadow: none;
 }
 .input-group img {
-  position: absolute;
+  height: 35px;
+  width: 35px;
+  /* position: absolute;
   top: 0;
   left: 0.6em;
   bottom: 0;
   margin: auto auto auto 0;
   width: 28px;
   height: 28px;
-  z-index: 5;
+  z-index: 5; */
 }
 
 .input-group input {
-  padding: 0.4em 0.4em 0.4em 2.2em;
+  /* padding: 0.4em 0.4em 0.4em 2.2em; */
 }
 
 .input-group-append button {
