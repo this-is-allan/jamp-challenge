@@ -30,14 +30,15 @@
       $resultsLength = count($search_results);
     ?>
 
-    <nav class="navbar navbar-light bg-white">
-        <div class="col-md-8 offset-md-2">
-          <div class="d-flex w-100">
-            <a href="/">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="search-wrapper d-flex w-100 my-2">
+            <a href="/" class="align-self-center">
               <img src="./assets/icons/back_btn.png" height="50" width="50">
             </a>
-    
-            <div class="input-group input-group--border-light mb-3">
+
+            <div class="input-group input-group--border-light">
               <div class="input-group-prepend">
                 <img src="./assets/icons/search_btn.png">
               </div>
@@ -53,19 +54,34 @@
               </div>
             </div>
           </div>
+        </div>
       </div>
-    </nav>
+    </div>
 
     <?php if($resultsLength > 0): ?>
       <div class="generics-wrapper py-3">
         <div class="container">
-          <h5 class="p-3 m-0">Genérico do <?= $query ?></h5>
+          <div class="row">
+            <h5 class="p-3 m-0">Genérico do <?= $query ?></h5>
+          </div>
         </div>
 
         <!-- Swiper -->
         <div class="swiper-container pb-md-5">
           <div class="swiper-wrapper my-1">
             <?php foreach ($generics as $generic): ?>
+              <div class="swiper-slide generic-card">
+                <div class="generic-card__cover">
+                  <img
+                    src="<?= $generic['productImg'] ?>"
+                    alt=""
+                  />
+                </div>
+
+                <div class="generic-card__title">
+                  <span><?= $generic['productName'] ?></span>
+                </div>
+              </div>
               <div class="swiper-slide generic-card">
                 <div class="generic-card__cover">
                   <img

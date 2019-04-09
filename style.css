@@ -247,10 +247,6 @@ src: local('Moderat Regular'), url('./assets/fonts/Moderat-Regular.ttf') format(
 }
 /* END Search Results PAGE */
 
-.swiper-wrapper {
-  justify-content: center;
-}
-
 @media screen and (max-width: 768px) {  
   .swiper-wrapper {
     justify-content: inherit;
