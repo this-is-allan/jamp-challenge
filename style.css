@@ -161,6 +161,7 @@ src: local('Moderat Regular'), url('./assets/fonts/Moderat-Regular.ttf') format(
 .generic-card .generic-card__cover img {
   width: 60px;
   height: 60px;
+  object-fit: cover;
 }
 
 .generic-card__title {

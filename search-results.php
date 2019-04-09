@@ -73,19 +73,7 @@
               <div class="swiper-slide generic-card">
                 <div class="generic-card__cover">
                   <img
-                    src="<?= $generic['productImg'] ?>"
-                    alt=""
-                  />
-                </div>
-
-                <div class="generic-card__title">
-                  <span><?= $generic['productName'] ?></span>
-                </div>
-              </div>
-              <div class="swiper-slide generic-card">
-                <div class="generic-card__cover">
-                  <img
-                    src="<?= $generic['productImg'] ?>"
+                    src="<?= empty($generic['productImg']) ? "http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png" :  $generic['productImg']?>"
                     alt=""
                   />
                 </div>
