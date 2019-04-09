@@ -48,7 +48,7 @@
                 value="<?= $query ?>"
                 placeholder="Buscar pelo nome do produto"
               >
-              <div id="clearInput" class="input-group-append mr-4">
+              <div id="clearInput" class="input-group-append">
                 <img src="./assets/icons/clear_btn" style="cursor: pointer">
               </div>
             </div>
