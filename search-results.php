@@ -31,26 +31,36 @@
     ?>
 
     <nav class="navbar navbar-light bg-white">
-      <div class="d-flex w-100">
-        <a href="/">
-          <img src="./assets/icons/back_btn.png" height="50" width="50">
-        </a>
-
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <img src="./assets/icons/search_btn.png">
+        <div class="col-md-8 offset-md-2">
+          <div class="d-flex w-100">
+            <a href="/">
+              <img src="./assets/icons/back_btn.png" height="50" width="50">
+            </a>
+    
+            <div class="input-group input-group--border-light mb-3">
+              <div class="input-group-prepend">
+                <img src="./assets/icons/search_btn.png">
+              </div>
+              <input
+                name="query"
+                type="text"
+                class="form-control"
+                value="<?= $query ?>"
+                placeholder="Buscar pelo nome do produto"
+              >
+              <div id="clearInput" class="input-group-append mr-4">
+                <img src="./assets/icons/clear_btn" style="cursor: pointer">
+              </div>
+            </div>
           </div>
-          <input type="text" class="form-control p-" value="<?= $query ?>">
-          <div class="input-group-append">
-            <img src="./assets/icons/clear_btn">
-          </div>
-        </div>
       </div>
     </nav>
 
     <?php if($resultsLength > 0): ?>
       <div class="generics-wrapper py-3">
-        <h5 class="p-3 m-0">Genérico do Tylenol</h5>
+        <div class="container">
+          <h5 class="p-3 m-0">Genérico do <?= $query ?></h5>
+        </div>
 
         <!-- Swiper -->
         <div class="swiper-container pb-md-5">
@@ -70,8 +80,6 @@
               </div>
             <?php endforeach ?>
           </div>
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
         </div>
       </div>
 
@@ -96,13 +104,19 @@
                         />
                         <div class="card-body">
                           <h5 class="card-title"><?= $product['productName'] ?></h5>
+
                           <p class="card-text">
                             A partir de
-                            <strong>R$ <?= $product['productPrice'] ?></strong>
+                            <strong
+                              class="product--price"
+                              data-price="<?= $product['productPrice'] ?>"
+                            >
+                              <?= $product['productPrice'] ?>
+                            </strong>
                           </p>
-                          <a href="#" class="btn btn-primary btn-block btn-lg"
-                            >Comparar preços</a
-                          >
+                          <a href="#" class="btn btn-primary btn-block">
+                            Comparar preços
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -116,8 +130,9 @@
     <?php else: ?>
       <div class="col-md-12">
         <div class="d-flex justify-content-center align-self-center">
-          <div class="alert alert-secondary" role="alert">
-            Nenhum produto foi encontrado
+          <div class="alert alert-light" role="alert">
+            <span>Nenhum produto foi encontrado</span>
+            <img src="https://image.flaticon.com/icons/svg/187/187150.svg" alt="" height="25" width="25">
           </div>
         </div>
       </div>
@@ -140,10 +155,14 @@
     <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
     
     <script>
-      setTimeout(function() {
-        // document.location.reload()
-      }, 8000);
-      $("#exampleModalLong").modal("show");
+      var products_price = ($(".product--price"));
+      $(products_price).each(function(index) {
+        var price = $(this).data("price")
+        $(this).text(price.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }))
+      })
 
       // Initialize Swiper
       var swiper = new Swiper(".swiper-container", {
@@ -151,21 +170,26 @@
         slidesPerView: 5,
         spaceBetween: 5,
         breakpoints: {
+          1440: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
           1024: {
-            slidesPerView: 4,
-            spaceBetween: 40
+            slidesPerView: 2,
+            centeredSlides: true,
+            spaceBetween: 30,
           },
           768: {
-            slidesPerView: 3,
-            spaceBetween: 30
+            slidesPerView: 2,
+            spaceBetween: 30,
           },
           640: {
             slidesPerView: 1.5,
             spaceBetween: 5
           },
           320: {
-            slidesPerView: 1,
-            spaceBetween: 10
+            slidesPerView: 1.5,
+            spaceBetween: 3
           }
         }
       });
