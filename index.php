@@ -11,11 +11,11 @@ if (isset($_SERVER['REDIRECT_URL'])) {
 
 switch($requested_page) {
 	case "/search":
-		include(__DIR__."/search-results.php");
+		include(__DIR__."/public/search-results.php");
 		break;
 	case "home":
-		include(__DIR__."/home.php");
+		include(__DIR__."/public/home.php");
 		break;
 	default:
-		include(__DIR__."/404.html");
+		include(__DIR__."/public/404.html");
 }
