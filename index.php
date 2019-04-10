@@ -17,5 +17,5 @@ switch($requested_page) {
 		include(__DIR__."/home.php");
 		break;
 	default:
-		include(__DIR__."/404.php");
+		include(__DIR__."/404.html");
 }
