@@ -166,5 +166,12 @@
     ></script>
     <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    
+    <script>
+      // if you have not opened the page with a query, display the "search" button
+      <?php if (empty($query)) { ?>
+        closeClearButton()
+      <?php } ?>
+    </script>
   </body>
 </html>
