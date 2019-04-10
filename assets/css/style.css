@@ -1,11 +1,16 @@
 @font-face {
 font-family: 'Moderat Bold';
-src: local('Moderat Bold'), url('../fonts/Moderat-Bold.ttf') format('truetype');
+src:
+  local('Moderat Bold'),
+  url('../fonts/Moderat-Bold.ttf')
+  format('truetype');
 }
 
 @font-face {
 font-family: 'Moderat Regular';
-src: local('Moderat Regular'), url('../fonts/Moderat-Regular.ttf') format('truetype');
+src:
+  local('Moderat Regular'),
+  url('../fonts/Moderat-Regular.ttf') format('truetype');
 }
 
 .navbar .navbar-brand img {
@@ -55,18 +60,6 @@ src: local('Moderat Regular'), url('../fonts/Moderat-Regular.ttf') format('truet
 .input-group img {
   height: 35px;
   width: 35px;
-  /* position: absolute;
-  top: 0;
-  left: 0.6em;
-  bottom: 0;
-  margin: auto auto auto 0;
-  width: 28px;
-  height: 28px;
-  z-index: 5; */
-}
-
-.input-group input {
-  /* padding: 0.4em 0.4em 0.4em 2.2em; */
 }
 
 .input-group-append button {
@@ -125,9 +118,6 @@ src: local('Moderat Regular'), url('../fonts/Moderat-Regular.ttf') format('truet
     height: 35px;
   }
 }
-
-
-
 
 /* BEGINEERSearch Results PAGE */
 .generics-wrapper h5 {
@@ -237,7 +227,11 @@ src: local('Moderat Regular'), url('../fonts/Moderat-Regular.ttf') format('truet
   box-shadow: none;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
   background: #412f97;
   border-color: #412f97;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
