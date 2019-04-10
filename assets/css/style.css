@@ -243,6 +243,10 @@ src:
 /* END Search Results PAGE */
 
 @media screen and (max-width: 768px) {  
+  .jumbotron .jumbotron__text p {
+    font-size: 18px;
+  }
+  
   .swiper-wrapper {
     justify-content: inherit;
   }
