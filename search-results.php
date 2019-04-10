@@ -67,7 +67,7 @@
         </div>
 
         <!-- Swiper -->
-        <div class="swiper-container pb-md-5">
+        <div class="container swiper-container pb-md-5">
           <div class="swiper-wrapper my-1">
             <?php foreach ($generics as $generic): ?>
               <div class="swiper-slide generic-card">
