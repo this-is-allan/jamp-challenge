@@ -38,21 +38,29 @@
               <img src="./assets/icons/back_btn.png" height="50" width="50">
             </a>
 
-            <div class="input-group input-group--border-light">
-              <div class="input-group-prepend">
-                <img src="./assets/icons/search_btn.png">
+            <form action="/search" class="w-100">
+              <div class="input-group input-group--border-light">
+                <div class="input-group-prepend">
+                  <img src="./assets/icons/search_btn.png">
+                </div>
+                <input
+                  name="query"
+                  type="text"
+                  class="form-control"
+                  value="<?= $query ?>"
+                  placeholder="Buscar pelo nome do produto"
+                >
+                <div id="clearInput" class="input-group-append">
+                  <img src="./assets/icons/clear_btn" style="cursor: pointer">
+                </div>
+
+                <div id="searchButton" class="input-group-append" style="display: none">
+                  <button class="btn" type="submit" id="button-addon2">
+                    Buscar
+                  </button>
+                </div>
               </div>
-              <input
-                name="query"
-                type="text"
-                class="form-control"
-                value="<?= $query ?>"
-                placeholder="Buscar pelo nome do produto"
-              >
-              <div id="clearInput" class="input-group-append">
-                <img src="./assets/icons/clear_btn" style="cursor: pointer">
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -159,6 +167,25 @@
     <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
     
     <script>
+      var searchButtonElement = $('#searchButton');
+      var clearInputElement = $('#clearInput');
+      var querytElement = $('input[name=query]');
+      
+      function closeClearButton() {
+        clearInputElement.hide()
+        searchButtonElement.show()
+        querytElement.val('');
+        querytElement.focus();
+      }
+      
+      // Detects whether field is changed to determine which buttons appear
+      querytElement.keyup(function() {
+        clearInputElement.hide()
+        searchButtonElement.show()
+      })
+
+      clearInputElement.click(closeClearButton)
+
       var products_price = ($(".product--price"));
       $(products_price).each(function(index) {
         var price = $(this).data("price")
