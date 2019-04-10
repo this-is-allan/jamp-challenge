@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Jamp Challenge</title>
+    <title>Jamp's challenge</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -166,7 +166,7 @@
     ></script>
     <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
     <script src="./assets/js/main.js"></script>
-    
+
     <script>
       // if you have not opened the page with a query, display the "search" button
       <?php if (empty($query)) { ?>
