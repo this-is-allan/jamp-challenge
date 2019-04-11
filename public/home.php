@@ -9,17 +9,15 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <nav class="navbar navbar-light bg-white">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
       <a class="navbar-brand" href="/">
         <img src="./assets/imgs/logo_jamp.png" alt="" />
       </a>
-  
-      <div class="right-side">
-        <a class="btn-img">
-          <img src="./assets/icons/profile_img.png" alt="">
-        </a>
-      </div>
+    
+      <a class="btn-img">
+        <img src="./assets/icons/profile_img.png" alt="">
+      </a>
     </div>
   </nav>
 
