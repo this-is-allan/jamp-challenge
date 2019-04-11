@@ -13,10 +13,6 @@ src:
   url('../fonts/Moderat-Regular.ttf') format('truetype');
 }
 
-.navbar .navbar-brand img {
-  width: 100px !important;
-}
-
 .jumbotron--search .img {
   background: #fff url("../imgs/bg_search.png") center no-repeat;
   width: 100%;
@@ -254,10 +250,6 @@ src:
     font-size: .70rem;
   }
 
-  .navbar .navbar-brand img {
-    width: 100px !important;
-  }
-  
   .navbar .btn-img img {
     width: 35px;
     height: 35px;

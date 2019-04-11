@@ -12,7 +12,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
       <a class="navbar-brand" href="/">
-        <img src="./assets/imgs/logo_jamp.png" alt="" />
+        <img src="./assets/imgs/logo_jamp.png" style="width: 100px" />
       </a>
     
       <a class="btn-img">
