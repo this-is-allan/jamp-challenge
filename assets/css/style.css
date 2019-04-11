@@ -39,7 +39,6 @@ src:
   z-index:2;
 }
 
-/* beginning of Jumbotron input */
 .input-group {
   background: #fff;
   outline: 0;
@@ -92,14 +91,11 @@ src:
   height: 30px;
   width: 30px;
 }
-/* end of Jumbotron input */
 
-/* beginning of Alert */
 .alert span {
   font-family: 'Moderat Bold', sans-serif !important;
   font-size: 20px;
 }
-/* end of Alert */
 
 @media screen and (max-width: 768px) {
   .jumbotron--search {
@@ -108,7 +104,6 @@ src:
   }
 }
 
-/* BEGINEERSearch Results PAGE */
 .generics-wrapper__title {
   font-family: 'Moderat Bold', sans-serif;
   color: #1fc499 !important;
@@ -229,7 +224,6 @@ src:
 .btn--purple:active, .btn--purple.active {
   background: #430F9B;
 }
-/* END Search Results PAGE */
 
 @media screen and (max-width: 768px) {  
   .jumbotron--search .jumbotron--search__text p {
