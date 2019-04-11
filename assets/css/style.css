@@ -108,21 +108,10 @@ src:
   }
 }
 
-@media screen and (max-width: 768px) {
-  .navbar .navbar-brand img {
-    width: 100px !important;
-  }
-  
-  .navbar .btn-img img {
-    width: 35px;
-    height: 35px;
-  }
-}
-
 /* BEGINEERSearch Results PAGE */
-.generics-wrapper h5 {
+.generics-wrapper__title {
   font-family: 'Moderat Bold', sans-serif;
-  color: #1fc499;
+  color: #1fc499 !important;
 }
 
 .swiper-container {
@@ -163,7 +152,7 @@ src:
   color: #430F9B;
 }
 
-.results-wrapper .results-wrapper__title {
+.results-wrapper__title {
   font-family: 'Moderat Bold', sans-serif;
   font-size: 20px;
   color: #9B9B9B;
@@ -269,5 +258,14 @@ src:
 
   .swiper-slide.generic-card {
     font-size: .70rem;
+  }
+
+  .navbar .navbar-brand img {
+    width: 100px !important;
+  }
+  
+  .navbar .btn-img img {
+    width: 35px;
+    height: 35px;
   }
 }

@@ -68,7 +68,7 @@
     <?php if($resultsLength > 0): ?>
       <div class="generics-wrapper py-3">
         <div class="container">
-          <h5 class="my-md-3">Genérico do <?= $query ?></h5>
+          <h5 class="generics-wrapper__title my-md-3">Genérico do <?= $query ?></h5>
         </div>
 
         <!-- Swiper -->
@@ -101,35 +101,33 @@
                 <span class="text-highlight"><?= $query ?></span>
               </h3>
 
-              <div class="results-wrapper__cards">
-                <div class="row no-gutters">
-                  <?php foreach ($search_results as $product): ?>
-                    <div class="col-6 col-md-3 my-2">
-                      <div class="card card--product mx-1">
-                        <img class="card-img-top" src="<?= empty($generic['productImg'])
-                          ? "../assets/imgs/no_image.png"
-                          :  $product['productImg']?>"
-                        />
-                        <div class="card-body">
-                          <h5 class="card-title"><?= $product['productName'] ?></h5>
+              <div class="row no-gutters">
+                <?php foreach ($search_results as $product): ?>
+                  <div class="col-6 col-md-3 my-2">
+                    <div class="card card--product mx-1">
+                      <img class="card-img-top" src="<?= empty($generic['productImg'])
+                        ? "../assets/imgs/no_image.png"
+                        :  $product['productImg']?>"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title"><?= $product['productName'] ?></h5>
 
-                          <p class="card-text">
-                            A partir de
-                            <strong
-                              class="product--price"
-                              data-price="<?= $product['productPrice'] ?>"
-                            >
-                              <?= $product['productPrice'] ?>
-                            </strong>
-                          </p>
-                          <a href="#" class="btn btn--purple btn-block">
-                            Comparar preços
-                          </a>
-                        </div>
+                        <p class="card-text">
+                          A partir de
+                          <strong
+                            class="product--price"
+                            data-price="<?= $product['productPrice'] ?>"
+                          >
+                            <?= $product['productPrice'] ?>
+                          </strong>
+                        </p>
+                        <a href="#" class="btn btn-block btn--purple">
+                          Comparar preços
+                        </a>
                       </div>
                     </div>
-                  <?php endforeach; ?>
-                </div>
+                  </div>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
