@@ -1,6 +1,7 @@
 var searchButtonElement = $("#searchButton");
 var clearInputElement = $("#clearInput");
 var querytElement = $("input[name=query]");
+var products_price = $(".product--price");
 
 function closeClearButton() {
   clearInputElement.hide();
@@ -17,7 +18,6 @@ querytElement.keyup(function() {
 
 clearInputElement.click(closeClearButton);
 
-var products_price = $(".product--price");
 $(products_price).each(function(index) {
   var price = $(this).data("price");
   $(this).text(
