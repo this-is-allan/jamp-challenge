@@ -21,29 +21,34 @@
     </div>
   </nav>
 
-  <div class="jumbotron jumbotron-billboard">
+  <div class="jumbotron jumbotron--search">
     <div class="img"></div>
     <div class="container">
       <div class="row">
         <div class="col-md-6 offset-md-3 px-xs-5 px-0 px-md-5">
           <form action="/search">
             <div class="input-group mb-3">
-              <img src="./assets/icons/search_btn.png" alt="">
-              <input name="query" type="text" class="form-control" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" placeholder="Buscar pelo nome do produto">
+              <img src="./assets/icons/search_btn.png">
+              <input
+                name="query"
+                type="text"
+                class="form-control"
+                placeholder="Buscar pelo nome do produto"
+              >
               <div class="input-group-append">
-                <button class="btn" type="submit" id="button-addon2">
+                <button class="btn" type="submit">
                   Buscar
                 </button>
               </div>
             </div>
           </form>
           
-          <div class="jumbotron__quote">
-            <div class="jumbotron__text">
+          <div class="jumbotron--search__quote">
+            <div class="jumbotron--search__text">
               <p>Busque produtos, compare os preços e escolha a <u>melhor opção</u></p>
             </div>
           
-            <div class="jumbotron__icon">
+            <div class="jumbotron--search__icon">
               <img src="./assets/icons/arrow.svg" alt="">
             </div>
           </div>
