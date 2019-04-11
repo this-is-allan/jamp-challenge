@@ -124,7 +124,7 @@
                               <?= $product['productPrice'] ?>
                             </strong>
                           </p>
-                          <a href="#" class="btn btn-primary btn-block">
+                          <a href="#" class="btn btn--purple btn-block">
                             Comparar preços
                           </a>
                         </div>

@@ -63,8 +63,8 @@ src:
 }
 
 .input-group-append button {
-  background: #412f97;
-  border-color: #412f97;
+  background: #430F9B;
+  border-color: #430F9B;
   border-radius: .2rem !important;
   color: #fff;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
@@ -81,7 +81,7 @@ src:
 .jumbotron--search .jumbotron--search__text p {
   font-family: 'Moderat Bold', sans-serif;
   font-size: 20px;
-  color: #412f97;
+  color: #430F9B;
 }
 
 .jumbotron--search .jumbotron--search__icon {
@@ -160,7 +160,7 @@ src:
 
 .generic-card__title span {
   font-family: 'Moderat Regular', sans-serif;
-  color: #412f97;
+  color: #430F9B;
 }
 
 .results-wrapper .results-wrapper__title {
@@ -189,14 +189,14 @@ src:
   font-family: 'Moderat Bold', sans-serif;
   font-weight: 800;
   font-size: 16px;
-  color: #412f97;
+  color: #430F9B;
 }
 
 .card--product .card-body {
   padding: .7rem;
 }
 
-.card--product .btn-primary {
+.card--product .btn--purple {
   font-family: 'Moderat Bold', sans-serif;
   font-size: .80rem;
   text-transform: uppercase;
@@ -216,29 +216,30 @@ src:
   display: block
 }
 
-.btn-primary,
-.btn-primary:not(:disabled):not(.disabled):active {
-  background: #412f97;
-  border-color: #412f97;
+.btn--purple,
+.btn--purple:not(:disabled):not(.disabled):active {
+  background: #430F9B;
+  border-color: #430F9B;
   color: #ffffff;
 }
 
-.btn-primary:not(:disabled):not(.disabled):active:focus {
+.btn--purple:not(:disabled):not(.disabled):active:focus {
   box-shadow: none;
 }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
-  background: #412f97;
-  border-color: #412f97;
+.btn--purple:hover,
+.btn--purple:focus,
+.btn--purple:active,
+.btn--purple.active,
+.open > .dropdown-toggle.btn--purple {
+  color: #fff;
+  background: #5f27cd;
+  border-color: #5f27cd;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
-.btn-primary:active, .btn-primary.active {
-  background: #412f97;
+.btn--purple:active, .btn--purple.active {
+  background: #430F9B;
 }
 /* END Search Results PAGE */
 
@@ -263,7 +264,7 @@ src:
     font-size: 12px;
   }
 
-  .card--product .btn-primary {
+  .card--product .btn--purple {
     font-size: .50rem;
   }
 
