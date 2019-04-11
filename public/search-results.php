@@ -166,11 +166,15 @@
     <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
     <script src="./assets/js/main.js"></script>
 
-    <!-- if you have not opened the page with a query, display the "search" button -->
-    <?php if (empty($query)): ?>
-      <script>
-        closeClearButton();
-      </script>
-    <?php endif ?>
+    <script>
+      window.onload = function() {
+        initializeSwiper();
+  
+        // if you have not opened the page with a query, display the "search" button
+        <?php if (empty($query)): ?>
+          closeClearButton();
+        <?php endif ?>
+      }
+    </script>
   </body>
 </html>

@@ -28,31 +28,32 @@ $(products_price).each(function(index) {
   );
 });
 
-// Initialize Swiper
-var swiper = new Swiper(".swiper-container", {
-  slidesPerView: 5,
-  spaceBetween: 5,
-  breakpoints: {
-    1440: {
-      slidesPerView: 3,
-      spaceBetween: 30
-    },
-    1024: {
-      slidesPerView: 2,
-      centeredSlides: true,
-      spaceBetween: 30
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30
-    },
-    640: {
-      slidesPerView: 1.5,
-      spaceBetween: 5
-    },
-    320: {
-      slidesPerView: 1.5,
-      spaceBetween: 3
+function initializeSwiper() {
+  new Swiper(".swiper-container", {
+    slidesPerView: 5,
+    spaceBetween: 5,
+    breakpoints: {
+      1440: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+      1024: {
+        slidesPerView: 2,
+        centeredSlides: true,
+        spaceBetween: 30
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      640: {
+        slidesPerView: 1.5,
+        spaceBetween: 5
+      },
+      320: {
+        slidesPerView: 1.5,
+        spaceBetween: 3
+      }
     }
-  }
-});
+  });
+}
