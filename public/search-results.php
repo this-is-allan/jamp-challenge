@@ -17,24 +17,23 @@
       href="./node_modules/swiper/dist/css/swiper.min.css"
     />
   </head>
+  <?php
+    $query = strtolower($_GET['query']);
+    $headers = array('Accept' => 'application/json');
+
+    $response = Requests::get('https://dev.jampapp.com/api/get_products.php?terms=' . $query, $headers);
+    $products = json_decode($response->body, true);
+
+    $generics = $products['generics'];
+    $search_results = $products['search_results'];
+    $resultsLength = count($search_results);
+  ?>
   <body>
-    <?php
-      $query = strtolower($_GET['query']);
-      $headers = array('Accept' => 'application/json');
-
-      $response = Requests::get('https://dev.jampapp.com/api/get_products.php?terms=' . $query, $headers);
-      $products = json_decode($response->body, true);
-
-      $generics = $products['generics'];
-      $search_results = $products['search_results'];
-      $resultsLength = count($search_results);
-    ?>
-
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="search-wrapper d-flex w-100 my-2">
-            <a href="/" class="align-self-center">
+          <div class="d-flex w-100 my-2 align-items-center">
+            <a href="/">
               <img src="./assets/icons/back_btn.png" height="50" width="50">
             </a>
 
@@ -80,9 +79,9 @@
             <?php foreach ($generics as $generic): ?>
               <div class="swiper-slide generic-card">
                 <div class="generic-card__cover">
-                  <img
-                    src="<?= empty($generic['productImg']) ? "http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png" :  $generic['productImg']?>"
-                    alt=""
+                  <img src="<?= empty($generic['productImg'])
+                    ? "../assets/imgs/no_image.png"
+                    :  $generic['productImg']?>"
                   />
                 </div>
 
@@ -109,10 +108,9 @@
                   <?php foreach ($search_results as $product): ?>
                     <div class="col-6 col-md-3 my-2">
                       <div class="card card--product mx-1">
-                        <img
-                          class="card-img-top"
-                          src="<?= $product['productImg'] ?>"
-                          alt="Card image cap"
+                        <img class="card-img-top" src="<?= empty($generic['productImg'])
+                          ? "../assets/imgs/no_image.png"
+                          :  $product['productImg']?>"
                         />
                         <div class="card-body">
                           <h5 class="card-title"><?= $product['productName'] ?></h5>
@@ -144,11 +142,12 @@
         <div class="d-flex justify-content-center align-self-center">
           <div class="alert alert-light" role="alert">
             <span>Nenhum produto foi encontrado</span>
-            <img src="https://image.flaticon.com/icons/svg/187/187150.svg" alt="" height="25" width="25">
+            <img src="../assets/imgs/emoji_sad.svg" height="25" width="25">
           </div>
         </div>
       </div>
     <?php endif ?>
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -167,11 +166,11 @@
     <script src="./node_modules/swiper/dist/js/swiper.min.js"></script>
     <script src="./assets/js/main.js"></script>
 
-    <script>
-      // if you have not opened the page with a query, display the "search" button
-      <?php if (empty($query)) { ?>
-        closeClearButton()
-      <?php } ?>
-    </script>
+    <!-- if you have not opened the page with a query, display the "search" button -->
+    <?php if (empty($query)): ?>
+      <script>
+        closeClearButton();
+      </script>
+    <?php endif ?>
   </body>
 </html>
