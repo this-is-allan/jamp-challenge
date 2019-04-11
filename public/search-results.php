@@ -68,9 +68,7 @@
     <?php if($resultsLength > 0): ?>
       <div class="generics-wrapper py-3">
         <div class="container">
-          <div class="row">
-            <h5 class="p-3 m-0">Genérico do <?= $query ?></h5>
-          </div>
+          <h5 class="my-md-3">Genérico do <?= $query ?></h5>
         </div>
 
         <!-- Swiper -->
@@ -97,9 +95,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="results-wrapper my-4">
+            <div class="results-wrapper my-4 my-md-0">
               <h3 class="results-wrapper__title">
-                Encontramos <?= $resultsLength ?> produtos para a busca:
+                Encontramos <?= $resultsLength ?> <?= $resultsLength > 1 ? 'produtos' : 'produto' ?> para a busca:
                 <span class="text-highlight"><?= $query ?></span>
               </h3>
 

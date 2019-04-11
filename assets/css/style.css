@@ -164,10 +164,9 @@ src:
 }
 
 .results-wrapper .results-wrapper__title {
-  font-family: 'Moderat Regular', sans-serif;
-  font-weight: 800;
+  font-family: 'Moderat Bold', sans-serif;
   font-size: 20px;
-  color: #878787;
+  color: #9B9B9B;
 }
 
 .text-highlight {
